@@ -8,6 +8,10 @@ export default class P5Wrapper extends React.Component {
     if( this.canvas.myCustomRedrawAccordingToNewPropsHandler ) {
       this.canvas.myCustomRedrawAccordingToNewPropsHandler(this.props);
     }
+		// additional props for throwing in your function the sketch from outside of the component
+		if (this.props.canvasUpdate) {
+			this.canvas.canvasUpdate = this.props.canvasUpdate;
+		}
   }
 
   componentWillReceiveProps(newprops) {
